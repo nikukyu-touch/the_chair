@@ -488,6 +488,7 @@ footer {
   }
   .detail li:nth-child(even) .desc {
     margin: 0 0 0 1em;
+    text-align: right;
   }
 
   footer {
