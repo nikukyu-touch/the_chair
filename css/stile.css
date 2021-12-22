@@ -461,6 +461,7 @@ footer {
   
   .detail li {
      display: flex;
+     align-items: center;
   }
   
   .detail li:nth-child(even) {
@@ -479,8 +480,14 @@ footer {
   }
   
   .detail .desc {
-    width: 30%;
+    width: 35%;
     max-width: 32em;
+    max-height: 10em;
+    margin-right: 1em;
+    text-align: left;
+  }
+  .detail li:nth-child(even) .desc {
+    margin: 0 0 0 1em;
   }
 
   footer {
