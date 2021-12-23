@@ -348,8 +348,8 @@ footer {
 
 .linkblock {
   width: 90%;
-  margin: 20px auto 10px;
-  padding-bottom: 20px;
+  margin: 20px auto;
+  padding-bottom: 10px;
   border-bottom: solid 1px black;
 }
 
@@ -365,9 +365,10 @@ footer {
   margin-left: 1em;
 }
 
-/* .information {
-  text-align: left;
-} */
+.linkblock a {
+  font-size: 1.5rem;
+  line-height: 2;
+}
 
 .information h3 {
   font-size: 1.2rem;
@@ -380,8 +381,32 @@ footer {
   max-width: 340px;
   margin: 0 auto;
 }
-.information .company p {
+
+.company p, .nekonote a {
   font-size: 1.2rem;
+}
+
+.nekonote {
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+}
+
+.nekonote a {
+  animation: flicker 1s infinite alternate ease-in-out;
+}
+@keyframes flicker {
+  0% {
+    border-bottom: 1px solid currentColor;
+  }
+  100% {
+    border-bottom: 1px solid transparent;
+  }
+}
+
+.nekonote a img {
+  height: 1.1em;
+  vertical-align: sub;
 }
 
 /* medium screen */
@@ -416,10 +441,9 @@ footer {
     height: 24px;
   }
 
-  .global-nav h2 {
-    font-size: 2.2rem;
+  /* .global-nav h2 {
     margin-right: 1em;
-  }
+  } */
 
   .global-nav a {
     font-size: 2rem;
@@ -495,12 +519,9 @@ footer {
     margin-bottom: 10px;
   }
 
-  /* .linkblock {
-    width: 90%;
-    margin: 20px auto 10px;
-    padding-bottom: 20px;
-    border-bottom: solid 1px black;
-  } */
+  .linkblock {
+    text-align: left;
+  }
 
   .linkblock ul {
     width: 400px;
@@ -509,6 +530,10 @@ footer {
   .linkblock ul a {
     font-size: 2.5rem;
     margin-left: 1em;
+  }
+
+  .linkblock a {
+    font-size: 1.8rem;
   }
 
   .information {
@@ -529,8 +554,19 @@ footer {
     margin: 0;
   }
 
-  .information .company p {
+  .information .company p, .nekonote a {
     font-size: 1.6rem;
+  }
+  .nekonote {
+    height: 5.2em;
+  }
+  .nekonote a {
+    border-bottom: 1px solid transparent;
+    transition: all .8s;
+  }
+  .nekonote a:hover {
+    border-bottom: 1px solid currentColor;
+    animation: none;
   }
 }
 
