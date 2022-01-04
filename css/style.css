@@ -14,7 +14,7 @@ h1, h2 {
   margin: 0;
 }
 h2 {
-  font-size: 3.4rem;
+  font-size: 2.4rem;
   line-height: 1;
   font-weight: 600;
 }
@@ -62,12 +62,12 @@ body {
 header {
   margin-bottom: 50px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 header img.Top-img {
   width: 100%;
-  height: 50vw;
+  height: 60vw;
   object-fit: cover;
   object-position: 50% 100%;
   margin-bottom: 40px;
@@ -128,7 +128,7 @@ header img {
 .menu-btn {
   position: relative;
   top: 0px;
-  right: 12px;
+  right: 0px;
   display: flex;
   height: 26px;
   width: 26px;
@@ -234,8 +234,8 @@ transition: background-color .4s .3s;
 
 .global-nav {
   width: 95%;
-  height: 26px;
   padding: 0 2.5%;
+  height: 26px;
   position: absolute;
   margin: 0 auto;
   display: flex;
@@ -260,31 +260,31 @@ transition: background-color .4s .3s;
   display: none;
 }
 
-#scene {
-  margin-bottom: 100px;
-}
-
-#scene p {
-  line-height: 2.5;
-}
-
-ul.scene {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 20px 1%;
-}
-
-.scene li {
-  width: 99%;
-  margin-bottom: 5px;
-}
-
-.scene li img {
+/* カルーセル(スライダー)設定 */
+.swiper {
   width: 100%;
-  height: 70vw;
-  object-fit: cover;
-  object-position: 70% 50%;
+  height: 46vw;
+}
+.swiper-slide {
+  opacity: .6;
+}
+.swiper-slide-active{
+  opacity: 1;
+}
+.swiper-slide img {
+  width: 100%;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  color: #3a3a3a;
+}
+
+.overview {
+  margin: 20px 0 50px 2%;
+}
+
+.overview p {
+  line-height: 2;
 }
 
 .usage {
@@ -292,7 +292,8 @@ ul.scene {
 }
 
 .usage h2 {
-  margin-bottom: 50px;
+  width: 6em;
+  margin: 0 auto 20px;
 }
 
 .usage ul {
@@ -300,7 +301,7 @@ ul.scene {
   justify-content: space-evenly;
   align-items: flex-end;
   flex-wrap: wrap;
-  margin: 10px 2%;
+  margin: 0 2%;
 }
 
 .usage li {
@@ -312,6 +313,11 @@ ul.scene {
   width: 100%;
   height: 60vw;
   object-fit: cover;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.usage li img.show {
+  opacity: 1;
 }
 
 .detail {
@@ -437,36 +443,31 @@ footer {
   }
 
   .global-nav {
-    padding: 0 2%;
+    /* padding: 0 2%; */
     height: 24px;
   }
-
-  /* .global-nav h2 {
-    margin-right: 1em;
-  } */
 
   .global-nav a {
     font-size: 2rem;
     margin-left: .75em;
   }
 
-  #scene p {
+  .swiper {
+    width: 600px;
+    height: 280px;
+  }
+  /* .swiper-slide {
+    width: 500px;
+  } */
+
+  .overview p {
     font-size: 2rem;
     line-height: 2.5;
   }
 
-  ul.scene {
-    display: flex;
-    justify-content: space-evenly;
-    margin: 20px 2%;
+  .usage h2 {
+    font-size: 3rem;
   }
-  .scene li {
-  width: 48%;
-  }
-  .scene li img {
-    height: 35vw;
-  }
-
   .usage li {
     width: 95%;
     display: flex;
@@ -479,22 +480,19 @@ footer {
     width: 80%;
   }
 
-  /* .detail {
-    margin: 50px 0 50px;
-  } */
-  
   .detail li {
      display: flex;
      align-items: center;
   }
-  
+
   .detail li:nth-child(even) {
     flex-direction: row-reverse;
   }
-  
+
   .detail .pic {
     flex: 1;
     height: 40vw;
+    max-width: 960px;
   }
 
   .detail .pic img {
@@ -502,16 +500,16 @@ footer {
     height: 100%;
     object-fit: cover;
   }
-  
+
   .detail .desc {
     width: 35%;
     max-width: 32em;
     max-height: 10em;
-    margin-right: 1em;
+    margin: 0 0 0 1em;
     text-align: left;
   }
   .detail li:nth-child(even) .desc {
-    margin: 0 0 0 1em;
+    margin: 0 1em 0 0;
     text-align: right;
   }
 
@@ -574,6 +572,11 @@ footer {
 
 /* large screen */
 @media (min-width: 1025px) {
+  header img.Top-img {
+    height: 615px;
+    object-position: 70% 50%;
+  }
+
   .Title-comment h1 {
     font-size: 8rem;
   }
@@ -586,10 +589,8 @@ footer {
   }
 
   .global-nav {
-    width: 95%;
     height: 32px;
-    padding: 0 2.5%;
-  }
+   }
 
   .global-nav h2 {
     font-size: 3rem;
@@ -601,8 +602,18 @@ footer {
     margin-left: 1em;
   }
 
+  .swiper {
+    width: 1024px;
+    height: 480px;
+  }
+
+  .usage ul {
+    justify-content: space-between;
+    margin: 10px 0;
+  }
+
   .usage li {
-    width: 32%;
+    width: 33%;
     display: block;
   }
 
