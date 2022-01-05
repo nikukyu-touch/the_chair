@@ -6,7 +6,7 @@
   window.addEventListener('scroll', checkPoint);
 
   function checkPoint() {
-    const triggerBottom = window.innerHeight / 4 * 3;
+    const triggerBottom = window.innerHeight / 10 * 9;
     // console.log(triggerBottom);
 
     anmelm.forEach(Scroll => {
