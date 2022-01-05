@@ -276,7 +276,13 @@ transition: background-color .4s .3s;
 }
 .swiper-button-prev:after,
 .swiper-button-next:after {
-  color: #3a3a3a;
+  color: #333333;
+}
+.swiper .swiper-pagination .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  margin: 0 8px;
+  background: #333333;
 }
 
 .overview {
