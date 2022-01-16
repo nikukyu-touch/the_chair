@@ -369,7 +369,7 @@ footer {
   display: flex;
   width: 280px;
   justify-content: space-between;
-  margin-left: auto;
+  margin: 0 0 1em auto;
 }
 
 .linkblock ul a {
@@ -379,7 +379,7 @@ footer {
 
 .linkblock a {
   font-size: 1.5rem;
-  line-height: 2;
+  line-height: 1;
 }
 
 .information h3 {
