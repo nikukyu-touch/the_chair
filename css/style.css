@@ -235,7 +235,7 @@ transition: background-color .4s .3s;
 .global-nav {
   width: 95%;
   padding: 0 2.5%;
-  height: 26px;
+  height: 28px;
   position: absolute;
   margin: 0 auto;
   display: flex;
@@ -447,10 +447,18 @@ footer {
   width: 480px;
   justify-content: space-between;
   }
+  .normal-menu a {
+    line-height: 1;
+    border-bottom: 1px solid currentColor;
+    transition: all .5s;
+  }
+  .normal-menu a:hover {
+    border-bottom: 1px solid transparent;
+  }
 
   .global-nav {
     /* padding: 0 2%; */
-    height: 24px;
+    height: 28px;
   }
 
   .global-nav a {
@@ -595,7 +603,7 @@ footer {
   }
 
   .global-nav {
-    height: 32px;
+    height: 34px;
    }
 
   .global-nav h2 {
