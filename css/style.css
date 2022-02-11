@@ -326,6 +326,10 @@ transition: background-color .4s .3s;
   opacity: 1;
 }
 
+.usage ul p {
+  opacity: 0;
+}
+
 .detail {
   margin: 50px 0 50px;
 }
@@ -352,6 +356,21 @@ transition: background-color .4s .3s;
 .detail .desc {
   width: 26em;
   margin: 0 auto;
+  opacity: 0;
+}
+.detail .desc.show, .usage ul p.show {
+  animation: slideIn 1.2s cubic-bezier(0, .21, 0, 1) 1 forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 footer {
@@ -525,6 +544,20 @@ footer {
   .detail li:nth-child(even) .desc {
     margin: 0 1em 0 0;
     text-align: right;
+  }
+
+  .detail .desc.show, .usage ul p.show {
+    animation: slideIn 1.4s cubic-bezier(0, .21, 0, 1) 1 forwards;
+  }
+  @keyframes slideIn {
+    0% {
+      transform: translateY(120px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   footer {
