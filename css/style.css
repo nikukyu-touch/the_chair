@@ -669,6 +669,13 @@ footer {
     height: 22vw;
   }
 
+  .usage ul p {
+    opacity: 1;
+  }
+  .usage ul p.show {
+    animation: none;
+  }
+
   .nekonote {
     margin-left: 25%;
   }
